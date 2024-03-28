@@ -2,7 +2,7 @@
 <a name="readme-top"></a>
 <div align="center">
 
-<h3 align="center">Rocket app</h3>
+<h1 align="center">Rocket app</h1>
 
   <p align="center">
     Basic Rust API
@@ -16,26 +16,19 @@ $ cargo run
 ### Prerequisites
 Rustup
   ```sh
-* curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
   ```
 
 <!-- USAGE EXAMPLES -->
 ## Usage
-
 Quick and easy Web3 API
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 <!-- CONTACT -->
 ## Contact
-
 Chris Scrivo - [@chrisscrivo](https://twitter.com/chrisscrivo) - info@mindfu.com
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
-
 * [Paris Liakos](https://www.udemy.com/course/web-dev-with-rust-rocket-diesel/)
