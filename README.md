@@ -30,20 +30,13 @@
   </p>
 </div>
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-### Built With
-
-* [![Rust][rust-lang.org]][Rust-url]
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 <!-- GETTING STARTED -->
 ## Getting Started
 $ cargo run
 
 ### Prerequisites
 Rustup
+  ```sh
 * curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
   ```
 
