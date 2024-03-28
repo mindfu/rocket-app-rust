@@ -33,4 +33,3 @@ Chris Scrivo - [@chrisscrivo](https://twitter.com/chrisscrivo) - info@mindfu.com
 ## Acknowledgments
 
 * [Paris Liakos](https://www.udemy.com/course/web-dev-with-rust-rocket-diesel/)
->>>>>>> origin/main
