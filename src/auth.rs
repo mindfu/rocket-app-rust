@@ -47,18 +47,20 @@ impl<'r> FromRequest<'r> for BasicAuth {
       let auth_header = request.headers().get_one("Authorization");
       if let Some(auth_header) = auth_header {
           if let Some(auth) = Self::from_authorization_header(auth_header) {
-            // Replace these with your actual valid username and password
-            let valid_username = "your_username";
-            let valid_password = "your_password";
-
-            if auth.username == valid_username && auth.password == valid_password {
-                return Outcome::Success(auth);
-            } else {
-                return Outcome::Error((Status::Unauthorized, ()));
-            }
+              return Outcome::Success(auth)
           }
       }
       
       Outcome::Error((Status::Unauthorized, ()))
   }
 }
+
+            // Replace these with your actual valid username and password
+            // let valid_username = "your_username";
+            // let valid_password = "your_password";
+
+            // if auth.username == valid_username && auth.password == valid_password {
+            //     return Outcome::Success(auth);
+            // } else {
+            //     return Outcome::Error((Status::Unauthorized, ()));
+            // }

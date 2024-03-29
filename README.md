@@ -26,8 +26,6 @@ Quick and easy Web3 API
 <!-- CONTACT -->
 ## Contact
 Chris Scrivo - [@chrisscrivo](https://twitter.com/chrisscrivo) - info@mindfu.com
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
