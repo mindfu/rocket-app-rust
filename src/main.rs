@@ -7,6 +7,8 @@ mod repositories;
 
 use auth::BasicAuth;
 use diesel::result::Error::NotFound;
+use rocket::{Rocket, Build};
+use rocket::fairing::AdHoc;
 use rocket::http::Status;
 use rocket::serde::json::{Value, json, Json};
 use rocket::response::status::{self, Custom};
@@ -73,6 +75,21 @@ async fn delete_rustacean(
     .await
 }
 
+async fn run_db_migrations(rocket: Rocket<Build>) -> Rocket<Build> {
+    use diesel_migrations::{embed_migrations, EmbeddedMigrations, MigrationHarness};
+
+    const MIGRATIONS: EmbeddedMigrations = embed_migrations!();
+
+    DbConn::get_one(&rocket)
+        .await
+        .expect("Unable to retrieve connection").run(|c| {
+            c.run_pending_migrations(MIGRATIONS).expect("Migrations failed");
+        })
+        .await;
+
+    rocket
+}
+
 #[catch(404)]
 fn not_found() -> Value {
     json!("Not found!")
@@ -104,6 +121,7 @@ async fn main() {
         unprocessable
     ])
     .attach(DbConn::fairing())
+    .attach(AdHoc::on_ignite("Diesel migrations", run_db_migrations))
     .launch()
     .await;
 }
